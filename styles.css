@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #FF61D8, #6B5BFF);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+.todo-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFD93D;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #FFC107;
+    transform: translateY(-2px);
+}
+
+.task-lists {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.list-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.task-item.completed {
+    background-color: #E8F5E9;
+    text-decoration: line-through;
+    color: #666;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-actions button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.delete-btn {
+    background-color: #FF6B6B;
+    color: white;
+}
+
+.complete-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .task-lists {
+        grid-template-columns: 1fr;
+    }
+    
+    .todo-input {
+        flex-direction: column;
+    }
+    
+    .todo-input button {
+        width: 100%;
+    }
+} 
